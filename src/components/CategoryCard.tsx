@@ -3,9 +3,10 @@ import React from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 
-export default function AdvancedDemo(data:any) {
+export default function CategoryCard(props: { category: any }) {
+    const { category } = props; 
     const header = (
-        <img alt="Card" src={data.strCategoryThumb} />
+        <img alt="Card" src={category.strCategoryThumb} />
     );
     const footer = (
         <>
@@ -17,7 +18,7 @@ export default function AdvancedDemo(data:any) {
         <div className="card flex justify-content-center">
             <Card title="Advanced Card" subTitle="Card subtitle" footer={footer} header={header} className="md:w-25rem">
                 <p className="m-0">
-                  {data.strCategoryDescription}
+                  {category.strCategoryDescription}
                 </p>
             </Card>
         </div>
