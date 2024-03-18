@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "primereact/resources/themes/bootstrap4-light-blue/theme.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
