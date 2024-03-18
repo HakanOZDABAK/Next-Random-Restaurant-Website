@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "primereact/resources/themes/bootstrap4-light-blue/theme.css";
-
+import "/node_modules/primeflex/primeflex.css"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

@@ -16,11 +16,11 @@ export default function Home() {
     take();
   });
 
-  return <main>
+  return <main><div className="grid">
     {categories.map((category: any)=>(
-<div className="grid">
-  <div className="col 6"><CategoryCard key={category.idCategory} category={category} /></div>
-</div>))}
+
+  <div className=" ml-6 mt-3"><CategoryCard key={category.idCategory} category={category} /></div>))}
+</div>
 
   </main>;
 }

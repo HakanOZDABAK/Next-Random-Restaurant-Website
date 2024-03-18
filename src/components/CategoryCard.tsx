@@ -14,7 +14,7 @@ export default function CategoryCard(props: { category: any }) {
 
     return (
         <div className="card flex justify-content-center">
-            <Card title="Advanced Card" subTitle="Card subtitle" footer={footer} className="md:w-25rem">
+            <Card title={category.strCategory} subTitle="Category" footer={footer} className="md:w-25rem">
             <img className='h-10rem w-10rem' alt="Card" src={category.strCategoryThumb} />
                 <p className="m-0">
                   {category.strCategoryDescription}
