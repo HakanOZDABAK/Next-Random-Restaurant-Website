@@ -1,14 +1,22 @@
-
-import React from 'react'; 
+'use client';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function CategoryCard(props: { category: any }) {
     const { category } = props; 
+    const router = useRouter()
+
+    const handleToPath=(categoryName:string)=>{
+        router.push(`/category/${categoryName}`)
+
+    }
+
 
     const footer = (
         <>
-            <Button label="Go This Category" icon="pi pi-check" />
+            <Button onClick={()=>{handleToPath(category.strCategory)}} label="Go This Category" icon="pi pi-check" />
         </>
     );
 
