@@ -5,9 +5,7 @@ import { Button } from 'primereact/button';
 
 export default function CategoryCard(props: { category: any }) {
     const { category } = props; 
-    const header = (
-        <img alt="Card" src={category.strCategoryThumb} />
-    );
+
     const footer = (
         <>
             <Button label="Go This Category" icon="pi pi-check" />
@@ -16,7 +14,8 @@ export default function CategoryCard(props: { category: any }) {
 
     return (
         <div className="card flex justify-content-center">
-            <Card title="Advanced Card" subTitle="Card subtitle" footer={footer} header={header} className="md:w-25rem">
+            <Card title="Advanced Card" subTitle="Card subtitle" footer={footer} className="md:w-25rem">
+            <img className='h-10rem w-10rem' alt="Card" src={category.strCategoryThumb} />
                 <p className="m-0">
                   {category.strCategoryDescription}
                 </p>
