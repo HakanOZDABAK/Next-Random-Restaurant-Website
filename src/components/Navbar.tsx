@@ -12,13 +12,6 @@ export default function Navbar() {
   const menuRight = useRef<Menu>(null);
 
   const router = useRouter();
-  const itemRenderer = (item: any) => (
-    <a className="flex align-items-center p-menuitem-link">
-      <span className={item.icon} />
-      <span className="mx-2">{item.label}</span>
-      {item.badge && <Badge className="ml-auto" value={item.badge} />}
-    </a>
-  );
 
   const handleToMainPage = () => {
     router.push("/");
