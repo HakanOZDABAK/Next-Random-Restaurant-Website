@@ -17,8 +17,9 @@ export default function MealCard(props: { meal: any }) {
             <Card key={meal.idMeal} title={meal.strMeal} subTitle="Meal" footer={footer} className="md:w-25rem">
             <img className='h-10rem w-10rem' alt="Card" src={meal.strMealThumb} />
                 <p className="m-0">
-                  You can order meal with button
+                  You can order meal with button, it cost is 5$
                 </p>
+
             </Card>
         </div>
     )

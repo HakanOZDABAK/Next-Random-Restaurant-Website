@@ -5,8 +5,10 @@ import { InputText } from 'primereact/inputtext';
 import { MenuItem } from 'primereact/menuitem';
 import { Badge } from 'primereact/badge';
 import { Avatar } from 'primereact/avatar';  
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
+    const router = useRouter()
     const itemRenderer = (item:any) => (
         <a className="flex align-items-center p-menuitem-link">
             <span className={item.icon} />
@@ -15,10 +17,16 @@ export default function Navbar() {
             {item.shortcut && <span className="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{item.shortcut}</span>}
         </a>
     );
+
+    const handleToMainPage = ()=>{
+        router.push("/")
+    }
     const items: MenuItem[] = [
         {
             label: 'AnaSayfa',
-            icon: 'pi pi-home'
+            icon: 'pi pi-home',
+            command:()=>handleToMainPage()
+             
         },
         {
             label: '',
