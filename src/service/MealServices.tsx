@@ -20,9 +20,9 @@ export class MealServices{
 getMealByCategory=async(categoryName:string)=>{
 
     try{
-    const result = await axios.get(`www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`).then(result=>result.data)
+    const result = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryName}`).then(result=>result.data)
 
-    return result.categories
+    return result.meals
      
        
     }
