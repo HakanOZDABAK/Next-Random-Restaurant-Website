@@ -2,9 +2,9 @@ import { useParams } from 'next/navigation';
 
 import React, { useEffect } from 'react';
 
-export default function Page() {
-const {categoryName} = useParams()
+export default function Category() {
+
     return (
-        <div>{categoryName}</div>
+<div></div>
     );
 }

@@ -9,12 +9,12 @@ export default function Home() {
   const [categories, setCategories] = useState<any[]>([]);
   
   useEffect(() => {
-    const take = async () => {
+    const handleGetAllMeal = async () => {
       let mealServices = new MealServices();
-      setCategories(await mealServices.getMealCategory());
+      setCategories(await mealServices.getAllMealCategory());
     };
 
-    take();
+    handleGetAllMeal();
   });
 
   return <main><div className="grid">
