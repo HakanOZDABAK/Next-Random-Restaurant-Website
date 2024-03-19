@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "primereact/resources/themes/viva-light/theme.css";
 import "/node_modules/primeflex/primeflex.css"
+import 'primeicons/primeicons.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
