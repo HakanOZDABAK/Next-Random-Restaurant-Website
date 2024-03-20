@@ -21,7 +21,13 @@ const {cartItems} = useCartStore()
   const cart: MenuItem[] = [
     {
       label: "Summary",
-      items: cartItems
+      items: cartItems,
+      
+      
+    },      {separator:true},
+    {
+      
+     template:<Button rounded label="Go to Cart"/>
     },
   ];
   const items: MenuItem[] = [
