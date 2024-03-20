@@ -1,4 +1,5 @@
 "use client";
+import { useCartStore } from "@/store/useCartStore";
 import { useRouter } from "next/navigation";
 import { Avatar } from "primereact/avatar";
 import { Badge } from "primereact/badge";
@@ -6,30 +7,26 @@ import { Button } from "primereact/button";
 import { Menu } from "primereact/menu";
 import { Menubar } from "primereact/menubar";
 import { MenuItem } from "primereact/menuitem";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Navbar() {
   const menuRight = useRef<Menu>(null);
-
+const {cartItems} = useCartStore()
   const router = useRouter();
 
   const handleToMainPage = () => {
     router.push("/");
   };
+  const itemRenderer = (item: MenuItem) => (
+    <a className="flex align-items-center p-menuitem-link">
+      <span className="mx-2">{item.label}</span>
+      {item.badge && <Badge className="ml-auto" value={item.badge} />}
+    </a>
+  );
   const cart: MenuItem[] = [
     {
       label: "Summary",
-      items: [
-        {
-          label: "Refresh",
-          template: itemRenderer,
-        },
-        {
-          label: "Export",
-          badge: 2,
-          template: itemRenderer,
-        },
-      ],
+      items: cartItems
     },
   ];
   const items: MenuItem[] = [

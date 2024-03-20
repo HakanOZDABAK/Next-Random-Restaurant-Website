@@ -5,10 +5,11 @@ import { Card } from 'primereact/card';
 
 export default function MealCard(props: { meal: any }) {
     const { meal } = props; 
-  
+    const {cartItems,setCartItems} = useCartStore()
+
     const footer = (
         <>
-            <Button rounded severity="info" text raised  onClick={()=>{alert("Ordered")}} label="Order This Meal" icon="pi pi-check" />
+            <Button rounded severity="info" text raised  onClick={()=>{set}} label="Order This Meal" icon="pi pi-check" />
         </>
     );
 
