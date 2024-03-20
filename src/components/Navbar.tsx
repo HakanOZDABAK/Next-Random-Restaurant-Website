@@ -17,12 +17,7 @@ const {cartItems} = useCartStore()
   const handleToMainPage = () => {
     router.push("/");
   };
-  const itemRenderer = (item: MenuItem) => (
-    <a className="flex align-items-center p-menuitem-link">
-      <span className="mx-2">{item.label}</span>
-      {item.badge && <Badge className="ml-auto" value={item.badge} />}
-    </a>
-  );
+
   const cart: MenuItem[] = [
     {
       label: "Summary",

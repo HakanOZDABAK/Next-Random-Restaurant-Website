@@ -1,15 +1,23 @@
 'use client';
+import { useCartStore } from '@/store/useCartStore';
 import { useRouter } from 'next/navigation';
+import { Badge } from 'primereact/badge';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
+import { MenuItem } from 'primereact/menuitem';
 
 export default function MealCard(props: { meal: any }) {
     const { meal } = props; 
-    const {cartItems,setCartItems} = useCartStore()
-
+    const {setCartItems} = useCartStore()
+    const itemRenderer = (item: MenuItem) => (
+        <a className="flex align-items-center p-menuitem-link">
+          <span className="mx-2">{item.label}</span>
+          {item.badge && <Badge className="ml-auto" value={item.badge} />}
+        </a>
+      );
     const footer = (
         <>
-            <Button rounded severity="info" text raised  onClick={()=>{set}} label="Order This Meal" icon="pi pi-check" />
+            <Button rounded severity="info" text raised  onClick={()=>{setCartItems(meal.strMeal,itemRenderer)}} label="Order This Meal" icon="pi pi-check" />
         </>
     );
 
