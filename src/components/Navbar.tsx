@@ -14,8 +14,8 @@ export default function Navbar() {
 const {cartItems} = useCartStore()
   const router = useRouter();
 
-  const handleToMainPage = () => {
-    router.push("/");
+  const handleToRoute = (path:string) => {
+    router.push(path);
   };
 
   const cart: MenuItem[] = [
@@ -27,14 +27,14 @@ const {cartItems} = useCartStore()
     },      {separator:true},
     {
       
-     template:<Button rounded label="Go to Cart"/>
+     template:<Button onClick={()=>{handleToRoute("/cart")}} rounded label="Go to Cart"/>
     },
   ];
   const items: MenuItem[] = [
     {
       label: "AnaSayfa",
       icon: "pi pi-home",
-      command: () => handleToMainPage(),
+      command: () => handleToRoute("/"),
     },
   ];
 
