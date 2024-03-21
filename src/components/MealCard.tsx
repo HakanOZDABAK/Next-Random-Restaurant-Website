@@ -15,15 +15,24 @@ export default function MealCard(props: { meal: any }) {
           {item.badge && <Badge className="ml-auto" value={item.badge} />}
         </a>
       );
+
+      
     const footer = (
-        <>
-            <Button rounded severity="info" text raised  onClick={()=>{setCartItems(meal.strMeal,itemRenderer)}} label="Order This Meal" icon="pi pi-check" />
-        </>
+        <div className='grid'>
+            <div className="col-6"> 
+            <Button rounded severity="success" text raised  onClick={()=>{setCartItems(meal.strMeal,itemRenderer)}} label="Order This Meal" icon="pi pi-check" />
+            </div>
+            <div className="col-6"> 
+            <Button rounded severity="info" text raised  onClick={()=>{setCartItems(meal.strMeal,itemRenderer)}} label="Reviews This Food" icon="pi pi-send" />
+            </div>
+           
+
+        </div>
     );
 
     return (
         <div className="card flex justify-content-center">
-            <Card key={meal.idMeal} title={meal.strMeal} subTitle="Meal" footer={footer} className="md:w-25rem">
+            <Card key={meal.idMeal} title={meal.strMeal} subTitle="Meal"footer={footer} className="md:w-25rem">
             <img className='h-10rem w-10rem' alt="Card" src={meal.strMealThumb} />
                 <p className="m-0">
                   You can order meal with button, it cost is 5$
