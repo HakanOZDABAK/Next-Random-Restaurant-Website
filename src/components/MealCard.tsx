@@ -24,10 +24,10 @@ router.push(path)
     const footer = (
         <div className='grid'>
             <div className="col-6"> 
-            <Button rounded severity="success" text raised  onClick={()=>{handleToRoute(`/category/${meal.strMeal}/review`)}} label="Order This Meal" icon="pi pi-check" />
+            <Button rounded severity="success" text raised  onClick={()=>{setCartItems(meal.strMeal,itemRenderer)}} label="Order This Meal" icon="pi pi-check" />
             </div>
             <div className="col-6"> 
-            <Button rounded severity="info" text raised  onClick={()=>{setCartItems(meal.strMeal,itemRenderer)}} label="Reviews This Food" icon="pi pi-send" />
+            <Button rounded severity="info" text raised  onClick={()=>{handleToRoute(`/reviews/${meal.strMeal}`)}} label="Reviews This Food" icon="pi pi-send" />
             </div>
            
 
