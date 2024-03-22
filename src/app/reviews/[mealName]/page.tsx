@@ -1,12 +1,21 @@
-'use client'
-import { useEffect } from "react"
+import ReviewPanel from "@/components/ReviewPanel";
 
-export default function Reviews({ params }: { params:{ mealName: string }  }) {
-
-    useEffect(()=>{
-        console.log(params.mealName)
-    })
+export default function page() {
   return (
-    <div></div>
-  )
+    <div className="grid align-items-center justify-content-center">
+      <div className="col-4">
+        <ReviewPanel />
+      </div>
+      <div className="grid align-items-center justify-content-center">
+        <div className="col-4">
+          <ReviewPanel />
+        </div>
+      </div>
+      <div className="grid align-items-center justify-content-center">
+        <div className="col-4">
+          <ReviewPanel />
+        </div>
+      </div>
+    </div>
+  );
 }
