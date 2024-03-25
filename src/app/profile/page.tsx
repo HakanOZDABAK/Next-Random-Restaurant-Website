@@ -3,6 +3,8 @@ import { ProfileTemplate } from "@/templates/ProfileTemplate";
 import { Menu } from "primereact/menu";
 import { Toast } from "primereact/toast";
 import React, { useRef, useState } from "react";
+import { FaBowlFood } from "react-icons/fa6";
+import { MdOutlineRateReview } from "react-icons/md";
 
 export default function Page() {
   const toast = useRef(null);
@@ -10,18 +12,18 @@ export default function Page() {
   let profileTemplate = new ProfileTemplate
   const items = [
     {
-      label: "Documents",
+      label: "Function",
       items: [
         {
-          label: "New",
-          icon: "pi pi-plus",
+          label: "Favorite Foods",
+          icon: <FaBowlFood className="mr-2" /> ,
           command: () => setSelectedMenuItem(profileTemplate.homeTemplate()),
 
          
         },
         {
-          label: "Search",
-          icon: "pi pi-search",
+          label: "My Reviews",
+          icon: <MdOutlineRateReview className="mr-2" />     ,
           command: () => setSelectedMenuItem(profileTemplate.newTemplate()),
 
         },
