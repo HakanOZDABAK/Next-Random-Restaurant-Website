@@ -1,23 +1,29 @@
 "use client";
-import React, { useRef } from "react";
-import { useRouter } from "next/router";
+import { ProfileTemplate } from "@/templates/ProfileTemplate";
 import { Menu } from "primereact/menu";
-import { MenuItem } from "primereact/menuitem";
 import { Toast } from "primereact/toast";
+import React, { useRef, useState } from "react";
 
-export default function page() {
-  const toast = useRef<Toast>(null);
-  const items: MenuItem[] = [
+export default function Page() {
+  const toast = useRef(null);
+  const [selectedMenuItem, setSelectedMenuItem] = useState<React.ReactNode>(null);
+  let profileTemplate = new ProfileTemplate
+  const items = [
     {
       label: "Documents",
       items: [
         {
           label: "New",
           icon: "pi pi-plus",
+          command: () => setSelectedMenuItem(profileTemplate.homeTemplate()),
+
+         
         },
         {
           label: "Search",
           icon: "pi pi-search",
+          command: () => setSelectedMenuItem(profileTemplate.newTemplate()),
+
         },
       ],
     },
@@ -35,6 +41,8 @@ export default function page() {
       ],
     },
   ];
+
+
   return (
     <div className="grid mt-4 ml-2">
       <div className="col-4">
@@ -48,7 +56,9 @@ export default function page() {
         <Toast ref={toast} />
         <Menu model={items} />
       </div>
-      <div className="col-8">DASHBOARD</div>
+      <div className="col-8">
+        {selectedMenuItem }
+      </div>
     </div>
   );
 }
