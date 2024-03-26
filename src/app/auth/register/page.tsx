@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 import { Checkbox } from 'primereact/checkbox';
+import { Divider } from 'primereact/divider';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { classNames } from 'primereact/utils';
@@ -63,15 +64,9 @@ const RegisterPage = () => {
                             <label htmlFor="password2" className="block text-900 text-xl font-medium mb-2">
                                 Re-Password
                             </label>
-                            <InputText id="password2" type="text" placeholder="RePassword" className="w-full md:w-30rem mb-5" value={registerForm.rePassword} onChange={(e) => setRegisterForm({...registerForm, rePassword: e.target.value})} style={{ padding: '1rem' }} />
-                            <div className="flex align-items-center justify-content-between mb-5 gap-5">
-                                <div className="flex align-items-center">
-                                    <Checkbox inputId="rememberme1" checked={checked} onChange={(e) => setChecked(e.checked ?? false)} className="mr-2"></Checkbox>
-                                    <label htmlFor="rememberme1">Remember me</label>
-                                </div>
-                                <a className="font-medium no-underline ml-2 text-right cursor-pointer" style={{ color: 'var(--primary-color)' }}>
-                                    Forgot password?
-                                </a>
+                            <Password inputId="password2"  toggleMask placeholder="RePassword" inputClassName="w-full p-3 md:w-30rem" value={registerForm.rePassword}  onChange={(e) => setRegisterForm({...registerForm, rePassword: e.target.value})}  />
+                            <div className="flex align-items-center justify-content-between mb-5 gap-5 mt-3">
+<Divider/>
                             </div>
                             <Button label="Sign Up" className="w-full p-3 text-xl" onClick={() => registerForm.password===registerForm.rePassword?console.log(registerForm):alert("Başarısız")}></Button>
                             <Button label="Sign In" severity="secondary" outlined className="w-full p-3 text-xl mt-3" onClick={() => handleToRoute("/auth/login")}></Button>
