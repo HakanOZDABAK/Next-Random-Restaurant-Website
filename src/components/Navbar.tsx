@@ -59,7 +59,7 @@ const {cartItems} = useCartStore()
         label="Cart"
         icon="pi pi-align-right"
         className="mr-2"
-        onClick={(event) => menuRight.current.toggle(event)}
+        onClick={(event) => menuRight.current?.toggle(event)}
         aria-controls="popup_menu_right"
         aria-haspopup
       />
