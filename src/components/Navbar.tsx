@@ -66,6 +66,7 @@ const {cartItems} = useCartStore()
       <Avatar
         image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
         shape="circle"
+        onClick={()=>handleToRoute("/profile")}
       />
     </div>
   );

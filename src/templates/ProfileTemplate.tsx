@@ -1,20 +1,13 @@
-export class ProfileTemplate{
+export class ProfileTemplate {
+  homeTemplate() {
+    return <div>Hello guys</div>;
+  }
 
-homeTemplate(){
-    return(
-        <div>
-            Hello guys
-        </div>
-    )
-}
+  newTemplate() {
+    return <div>Hello girls</div>;
+  }
 
-newTemplate(){
-    return(
-        <div>
-            Hello girls
-        </div>
-    )
-}
-
-
+  defaultTemplate() {
+    return <div>Waiting Order...</div>;
+  }
 }
