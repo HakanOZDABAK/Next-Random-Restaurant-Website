@@ -14,13 +14,17 @@ export default function EachCategory({
       try {
         let mealServices = new MealServices();
 
-        setMeals(await mealServices.getMealByCategory(params.categoryName));
+        const allMeals = await mealServices.getMealByCategory(
+          params.categoryName
+        );
+        setMeals(allMeals)
       } catch (err) {
         console.log(err);
       }
     };
     handleGetMeal();
-  });
+  },
+  []);
   return (
     <main>
       <div className="grid flex justify-content-center">

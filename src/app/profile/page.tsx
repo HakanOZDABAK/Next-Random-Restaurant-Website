@@ -1,4 +1,5 @@
 "use client";
+import FavoriteFoodTemplate from "@/templates/FavoriteFoodTemplate";
 import { ProfileTemplate } from "@/templates/ProfileTemplate";
 import { Divider } from "primereact/divider";
 import { Menu } from "primereact/menu";
@@ -10,7 +11,7 @@ import { MdOutlineRateReview } from "react-icons/md";
 export default function Page() {
   const toast = useRef(null);
   const [selectedMenuItem, setSelectedMenuItem] = useState<React.ReactNode>(null);
-  let profileTemplate = new ProfileTemplate
+
   const items = [
     {
       label: "Function",
@@ -18,14 +19,14 @@ export default function Page() {
         {
           label: "Favorite Foods",
           icon: <FaBowlFood className="mr-2" /> ,
-          command: () => setSelectedMenuItem(profileTemplate.homeTemplate()),
+          command: () => setSelectedMenuItem(<FavoriteFoodTemplate/>),
 
          
         },
         {
           label: "My Reviews",
           icon: <MdOutlineRateReview className="mr-2" />     ,
-          command: () => setSelectedMenuItem(profileTemplate.newTemplate()),
+ 
 
         },
       ],
@@ -68,7 +69,7 @@ export default function Page() {
 
 
       <div className="col-8">
-        {selectedMenuItem?selectedMenuItem:profileTemplate.defaultTemplate() }
+        {selectedMenuItem?selectedMenuItem:"NONE" }
       </div>
     </div>
   );
