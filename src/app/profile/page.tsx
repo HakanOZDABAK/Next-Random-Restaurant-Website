@@ -1,6 +1,7 @@
 "use client";
 import FavoriteFoodTemplate from "@/templates/FavoriteFoodTemplate";
 import { ProfileTemplate } from "@/templates/ProfileTemplate";
+import ReviewsTemplate from "@/templates/ReviewsTemplate";
 import { Divider } from "primereact/divider";
 import { Menu } from "primereact/menu";
 import { Toast } from "primereact/toast";
@@ -25,6 +26,8 @@ export default function Page() {
         {
           label: "My Reviews",
           icon: <MdOutlineRateReview className="mr-2" />,
+          command: () => setSelectedMenuItem(<ReviewsTemplate />),
+
         },
       ],
     },
