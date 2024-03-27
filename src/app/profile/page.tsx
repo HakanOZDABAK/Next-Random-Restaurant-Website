@@ -10,7 +10,8 @@ import { MdOutlineRateReview } from "react-icons/md";
 
 export default function Page() {
   const toast = useRef(null);
-  const [selectedMenuItem, setSelectedMenuItem] = useState<React.ReactNode>(null);
+  const [selectedMenuItem, setSelectedMenuItem] =
+    useState<React.ReactNode>(null);
 
   const items = [
     {
@@ -18,16 +19,12 @@ export default function Page() {
       items: [
         {
           label: "Favorite Foods",
-          icon: <FaBowlFood className="mr-2" /> ,
-          command: () => setSelectedMenuItem(<FavoriteFoodTemplate/>),
-
-         
+          icon: <FaBowlFood className="mr-2" />,
+          command: () => setSelectedMenuItem(<FavoriteFoodTemplate />),
         },
         {
           label: "My Reviews",
-          icon: <MdOutlineRateReview className="mr-2" />     ,
- 
-
+          icon: <MdOutlineRateReview className="mr-2" />,
         },
       ],
     },
@@ -46,30 +43,24 @@ export default function Page() {
     },
   ];
 
-
   return (
     <div className="grid mt-4 ml-2">
       <div className="col-4">
-
         <img
           src="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
           alt="unknown"
         />
-           
       </div>
-      
+
       <div className="mt-8  col-8">KULLANICI İSMİ</div>
-    
-      <div className="col-4">
-      
+
+      <div className="col-2">
         <Toast ref={toast} />
         <Menu model={items} />
-
       </div>
 
-
-      <div className="col-8">
-        {selectedMenuItem?selectedMenuItem:"NONE" }
+      <div className="col-9">
+        {selectedMenuItem ? selectedMenuItem : "NONE"}
       </div>
     </div>
   );
