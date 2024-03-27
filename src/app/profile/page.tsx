@@ -1,8 +1,6 @@
 "use client";
 import FavoriteFoodTemplate from "@/templates/FavoriteFoodTemplate";
-import { ProfileTemplate } from "@/templates/ProfileTemplate";
 import ReviewsTemplate from "@/templates/ReviewsTemplate";
-import { Divider } from "primereact/divider";
 import { Menu } from "primereact/menu";
 import { Toast } from "primereact/toast";
 import React, { useRef, useState } from "react";
@@ -63,7 +61,7 @@ export default function Page() {
       </div>
 
       <div className="col-9">
-        {selectedMenuItem ? selectedMenuItem : "NONE"}
+        {selectedMenuItem ? selectedMenuItem : <FavoriteFoodTemplate/>}
       </div>
     </div>
   );

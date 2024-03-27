@@ -5,11 +5,14 @@ import { Badge } from "primereact/badge";
 import { Button } from "primereact/button";
 import { Card } from "primereact/card";
 import { MenuItem } from "primereact/menuitem";
+import { useState } from "react";
+import Heart from "react-animated-heart";
 
 export default function MealCard(props: { meal: any }) {
   const { meal } = props;
   const { setCartItems } = useCartStore();
   const router = useRouter();
+  const [isClick, setClick] = useState(false);
   const itemRenderer = (item: MenuItem) => (
     <a className="flex align-items-center p-menuitem-link">
       <span className="mx-2">
@@ -62,7 +65,24 @@ export default function MealCard(props: { meal: any }) {
         footer={footer}
         className="md:w-25rem"
       >
-        <img className="h-10rem w-10rem" alt="Card" src={meal.strMealThumb} />
+        <div className="grid">
+   
+          <div className="col-8">
+   
+            <img
+              className="h-10rem w-10rem "
+              alt="Card"
+              src={meal.strMealThumb}
+            />
+          </div>
+          <Heart
+          key={meal.idMeal}
+            styles={{ heigth: "5rem",marginTop:"3rem" }}
+            isClick={isClick}
+            onClick={() => setClick(!isClick)}
+          />
+        </div>
+
         <p className="m-0">You can order meal with button, it cost is 5$</p>
       </Card>
     </div>
